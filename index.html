@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="RxApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="RxApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="RxApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="RxApp" class="no-js">
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reactive Extentions Tutorials</title>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Assets/site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ng-include="'App/Navigation/nav.html'"></div>
+
+    <div class="container-fluid">
+        <div ng-view="">Loading...</div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    
+
+    <!-- ACE Editor -->
+    <script src="Assets/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Reactive Extensions -->
+    <script src="Scripts/rs.all.js"></script>
+
+    <!-- Lets load Angular -->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- Lets fire up the app -->
+    <script src="App/app.js"></script>
+    <script src="App/Home/routes.js"></script>
+    <script src="App/Menu/route.js"></script>
+    <script src="App/RxJS/route.js"></script>
+    <script src="App/JavaScript/routes.js"></script>
+
+    <!-- Services -->
+    <script src="App/Services/podDataFactory.js"></script>
+</body>
+</html>

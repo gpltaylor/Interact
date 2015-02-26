@@ -1,0 +1,50 @@
+﻿<h1>Variables</h1>
+<p>
+    You may of heard the saying "There are an unknown number of variables"? This basically means there are too many 
+    things to keep track of in order to determin an event or action. A variable is basically a single value or a thing. 
+    An example of a variable is something you want to monitor that has some meaning to you.
+</p>
+<p>
+    The weather may be a veriable so to how early you leave home to get too work. You know if it's raining it may take some longer.
+    Time is also a variables here. This means that if it's raining you need to leave home 10 minutes early.
+</p>
+<p>
+    The power of a variable is that it can change and therefore allow us to make a "Leave Early" program that works for everyone 
+    irregardless of the time you need to leave and how many minutes early they need to set off.
+</p>
+
+<div id="editorwrapper" class="col-xs-6">
+<pre id="editor">
+// Is it raining? Yes/No is expressed as true/false
+var isRaining = true;
+// numbers are typed as the raw number
+var minsToAddIfRaining = 10;
+// Dates can be used however they are more complicated.. See our Moment.JS course.
+var TimeToLeave = new Date(2015,2,24,8,30);
+
+console.log(isRaining);
+console.log(minsToAddIfRaining);
+console.log(TimeToLeave);
+
+// Use the variable to translate the minsToAddIfRaining to milliseconds.
+var milisecToReduce = ((minsToAddIfRaining*60)*1000);
+// Create a new date variable but remove the 10 minutes.
+var TimeToLeaveIfRaining = new Date(TimeToLeave - milisecToReduce);
+
+// Display the time to leave when it's raining.
+console.log(TimeToLeaveIfRaining);
+</pre>
+</div>
+
+<div class="col-xs-6">
+    <fieldset>
+        <legend>Results</legend>
+        <div ng-repeat="data in scriptResults track by $index">{{data}}</div>
+    </fieldset>
+</div>
+
+<div class="col-xs-12">
+    <input type="button" ng-click="runScript()" value="run" class="btn btn-default" />
+    <input type="button" ng-click="clearResults()" value="clear" class="btn btn-default" />
+
+</div>

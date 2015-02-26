@@ -1,0 +1,58 @@
+﻿<h1>Group By</h1>
+<p>
+    Groups the elements of an observable sequence according to a specified key selector function and comparer and selects the 
+    resulting elements by using a specified function.
+</p>
+<p>
+    The example below shows a list of loans given to multiple people. As part of reporting you might want to know the total 
+    loan amount for all the different term. for example, what's the total loan amount for all loans where the term is 12 months?
+</p>
+
+<div id="editorwrapper" class="col-xs-12 col-sm-6">
+<pre id="editor">
+var codes = [
+    { term: 12, loan: 1000},
+    { term: 12, loan: 1000},
+    { term: 24, loan: 1000},
+    { term: 60, loan: 1000},
+    { term: 60, loan: 1000},
+    { term: 60, loan: 1000},
+    { term: 120, loan: 1000}
+];
+
+var source = Rx.Observable
+    .from(codes)
+    .groupBy(
+        function (x) { return x.term; },
+        function (x) { return x.loan; }
+    );
+        
+var subscription = source.subscribe(
+    function (obs) {
+        obs
+            .sum()
+            .subscribe(function (x) {
+                console.log('Total Loans ' + x + ' of Term ' + obs.key);
+        });
+    },
+    function (err) {
+        console.log('Error: ' + err);
+    },
+    function () {
+        console.log('Completed');
+    });
+</pre>
+</div>
+
+<div class="col-xs-6">
+    <fieldset>
+        <legend>Results</legend>
+        <div ng-repeat="data in scriptResults track by $index">{{data}}</div>
+    </fieldset>
+</div>
+
+<div class="col-xs-12">
+    <input type="button" ng-click="runScript()" value="run" class="btn btn-default" />
+    <input type="button" ng-click="clearResults()" value="clear" class="btn btn-default" />
+
+</div>

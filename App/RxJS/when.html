@@ -1,0 +1,54 @@
+﻿<h1>When</h1>
+<p>
+    A common problem within JavaScript is pulling multiple calls from an AJAX/web-service at the same time. 
+    In some cases you may need to perform a call to determin the next.
+</p>
+<p>
+    Think about linking to multiple shops that sell chocolate ice cream. You might call each API a the same time to return 
+    a list of prices. Once you have all the prices you can then order from the cheapest shop.
+</p>
+<p>
+    If this case it makes sense to connection to all the shops at the same time, then filter the results for the cheapest, then 
+    order. This is a complex issues as each API will take a different amount of time to return.
+</p>
+<p>
+    Using When we are able to perform mulitple calls, then when we are happy with the data, use min to get the lowest price. 
+    Note that that call takes three seconds to complete. That's because we have to wait for Johns Ice Creams to finish before we sum the details. 
+    This does not take five second (sum of all the time each call takes) as they are done in concurrently.
+</p>
+
+<div id="editorwrapper" class="col-xs-6">
+<pre id="editor">
+var getPriceFrom = function(arg, price, time) {
+    return Rx.Observable.timer(time).thenDo(function() {
+        return {name: arg, price: price};
+        }
+    );
+};
+
+var data = Rx.Observable.when(
+    getPriceFrom('Johns Ice Creams', 3.99, 3000),
+    getPriceFrom('Fredricks ice Cream', 2.99, 1000),
+    getPriceFrom('Bills Ice Cream', 12.99, 1000)
+);
+
+data.min(function(iceData) {
+        return iceData.price; 
+    }).forEach(function(minIceData) {
+        console.log(minIceData);
+});
+</pre>
+</div>
+
+<div class="col-xs-6">
+    <fieldset>
+        <legend>Results</legend>
+        <div ng-repeat="data in scriptResults track by $index">{{data}}</div>
+    </fieldset>
+</div>
+
+<div class="col-xs-12">
+    <input type="button" ng-click="runScript()" value="run" class="btn btn-default" />
+    <input type="button" ng-click="clearResults()" value="clear" class="btn btn-default" />
+
+</div>
