@@ -1,0 +1,12 @@
+TODO
+
+Get Karma working to fire up a server to render the HTML
+
+Get Karma to run test
+http://kwilson.me.uk/blog/use-karma-and-grunt-to-run-your-jasmine-tests-in-real-time/
+
+Get Grunt to Run the tests
+
+Possibly Move code to a src DIR
+
+Get SASS working. Possibly need a dist folder to publish to? This is a pain as I want to edit the files live. Will need a watch to swap the file to dist folder if edited.
