@@ -1,19 +1,44 @@
+@import 'mixins';
 @import 'settings';
 
 body {
   font-family: $mainFont;
 }
 
-.mainheader {
-  color: $blue;
+#editorwrapper {
+  position: relative;
+  height: 300px;
 }
 
-h1 {
-  color: $green;
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.view1 {
+.reactmenu {
   h1 {
-    color: $green;
+    margin: 0px;
+  }
+  
+  .pod {
+    min-height: 80px;
+    padding-top: 5px;
+    @include border-radius(5px);
+    cursor: pointer;
+
+    h2 {
+      margin: 0px;
+    }
+
+    h3 {
+      margin: 0px;
+    }
+
+    &.selected {
+      border: solid 1px $gray;
+    }
   }
 }

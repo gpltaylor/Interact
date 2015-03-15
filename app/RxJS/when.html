@@ -27,15 +27,30 @@ var getPriceFrom = function(arg, price, time) {
 };
 
 var data = Rx.Observable.when(
-    getPriceFrom('Johns Ice Creams', 3.99, 3000),
-    getPriceFrom('Fredricks ice Cream', 2.99, 1000),
+    getPriceFrom('Johns Ice Creams', 3.99, 4000),
+    getPriceFrom('Fredricks ice Cream', 2.99, 2000),
     getPriceFrom('Bills Ice Cream', 12.99, 1000)
 );
 
-data.min(function(iceData) {
-        return iceData.price; 
+// Select all the items at they arrive
+data.select(function(iceData) {
+        return iceData.price;
     }).forEach(function(minIceData) {
-        console.log(minIceData);
+        console.log('select', minIceData);
+});
+
+// Return the cheapest once we have all the prices
+data.min(function(iceData) {
+        return iceData.price;
+    }).forEach(function(minIceData) {
+        console.log('cheapest', minIceData);
+});
+
+// Return the dearest once we have all the prices
+data.max(function(iceData) {
+        return iceData.price;
+    }).forEach(function(minIceData) {
+        console.log('dearest', minIceData);
 });
 </pre>
 </div>
