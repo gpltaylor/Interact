@@ -1,0 +1,19 @@
+@import 'settings';
+
+body {
+  font-family: $mainFont;
+}
+
+.mainheader {
+  color: $blue;
+}
+
+h1 {
+  color: $green;
+}
+
+.view1 {
+  h1 {
+    color: $green;
+  }
+}

@@ -1,26 +1,21 @@
 ﻿<h1>Map</h1>
-<p>Projects each element of an observable sequence into a new form by incorporating the element's index. This is an alias for the select method.</p>
+<p>
+    Loop over an array of items and transform the results. This is an alias to the select function.<br/>
+    Here you can see that we loop over the range of numbers and pow(2) each item into a new array result.
+    The variable 'source' now contains the answers.
+</p>
 
 <div id="editorwrapper" class="col-xs-6">
 <pre id="editor">
-    var source = Rx.Observable.when(
-    Rx.Observable.timer(1000)
-        .and(Rx.Observable.timer(1000))
-            .thenDo(function (x, y) { return 'first'; }),
-    Rx.Observable.timer(500)
-        .and(Rx.Observable.timer(500))
-            .thenDo(function (x, y) { return 'second'; })
-);
-var subscription = source.subscribe(
-    function (x) {
-        console.log('Next: ' + x);
-    },
-    function (err) {
-        console.log('Error: ' + err);
-    },
-    function () {
-        console.log('Completed');
+var source = Rx.Observable.range(1, 3)
+    .map(function (x, idx, obs) {
+        return x * x;
     });
+
+source.forEach(function(x) {
+   console.log(x);
+});
+
 </pre>
 </div>
 
