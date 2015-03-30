@@ -9,5 +9,8 @@ angular.module('RxApp.JavaScript', ['ngRoute'])
     }).when('/JavaScript/variables', {
         templateUrl: 'App/JavaScript/variables.html',
         controller: 'View1Ctrl'
+    }).when('/JavaScript/functions/reuse', {
+        templateUrl: 'App/JavaScript/functions/functions-reuse.html',
+        controller: 'View1Ctrl'
     });
 }]);

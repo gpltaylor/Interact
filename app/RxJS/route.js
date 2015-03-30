@@ -35,7 +35,7 @@ angular.module('RxApp.RxJS', ['ngRoute'])
     }
 
     console.log = function () {
-        $scope.scriptResults.push(JSON.stringify(arguments));
+        $scope.scriptResults.push(arguments);
         $scope.$apply();
     };
 

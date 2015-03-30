@@ -14,7 +14,7 @@ angular.module('RxApp.Menu', ['ngRoute'])
 
 .controller('MenuCtrl', ['$scope','$location','StatusType', 'PodService', 'CategoryService', 'TypeService', function ($scope, $location, StatusType, PodService, CategoryService, TypeService) {
     $scope.cats = [];
-    $scope.selected;
+    $scope.selected = false;
     $scope.myInterval = 0;
 
     var podType = [{
@@ -64,7 +64,6 @@ angular.module('RxApp.Menu', ['ngRoute'])
     function select(pod) {
         PodService.pods
             .filter(function (pod) { return pod.selected === true; })
-            .map(function (pod) { return pod; })
             .forEach(function (pod) { pod.selected = false; });
         pod.selected = true;
         $scope.selected = pod;

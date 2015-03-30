@@ -1,19 +1,20 @@
 ﻿<h1>When</h1>
 <p>
-    A common problem within JavaScript is pulling multiple calls from an AJAX/web-service at the same time. 
-    In some cases you may need to perform a call to determin the next.
+    A common problem within JavaScript is pulling multiple calls from an AJAX/Web-Service at the same time.
+    This is especially true when a calculation can only be achieved once all the data is returned.
 </p>
 <p>
-    Think about linking to multiple shops that sell chocolate ice cream. You might call each API a the same time to return 
-    a list of prices. Once you have all the prices you can then order from the cheapest shop.
+    Think about linking to multiple shops that sell ice cream. You might call each API at the same time to return
+    a list of prices. Once you have all the prices you can then order from the cheapest.
 </p>
 <p>
-    If this case it makes sense to connection to all the shops at the same time, then filter the results for the cheapest, then 
+    In this case it makes sense to connection to all the shops at the same time, then filter the results for the cheapest, then
     order. This is a complex issues as each API will take a different amount of time to return.
 </p>
 <p>
-    Using When we are able to perform mulitple calls, then when we are happy with the data, use min to get the lowest price. 
-    Note that that call takes three seconds to complete. That's because we have to wait for Johns Ice Creams to finish before we sum the details. 
+    Using 'When' we are able to perform multiple calls, then when we are happy with the data, use min to get the lowest price.
+    Note that that call takes three seconds to complete.
+    That's because we have to wait for Johns Ice Creams to finish before we sum the details.
     This does not take five second (sum of all the time each call takes) as they are done in concurrently.
 </p>
 
@@ -27,31 +28,34 @@ var getPriceFrom = function(arg, price, time) {
 };
 
 var data = Rx.Observable.when(
-    getPriceFrom('Johns Ice Creams', 3.99, 4000),
+    getPriceFrom('Johns Ice Creams', 3.99, 1000),
     getPriceFrom('Fredricks ice Cream', 2.99, 2000),
-    getPriceFrom('Bills Ice Cream', 12.99, 1000)
+    getPriceFrom('Bills Ice Cream', 12.99, 3000)
 );
 
-// Select all the items at they arrive
-data.select(function(iceData) {
-        return iceData.price;
-    }).forEach(function(minIceData) {
-        console.log('select', minIceData);
-});
+// Select all the items as they arrive
+data.subscribe(
+    function(iceData) {
+        console.log(iceData);
+    },
+    function(err) {
+        console.log("error", err);
+    },
+    function(complete) {
+        // Return the cheapest once we have all the prices
+        data.min(function(pre, curr) {
+                return pre.price < curr.price;
+            }).forEach(function(minIceData) {
+                console.log('cheapest', minIceData);
+        });
 
-// Return the cheapest once we have all the prices
-data.min(function(iceData) {
-        return iceData.price;
-    }).forEach(function(minIceData) {
-        console.log('cheapest', minIceData);
-});
-
-// Return the dearest once we have all the prices
-data.max(function(iceData) {
-        return iceData.price;
-    }).forEach(function(minIceData) {
-        console.log('dearest', minIceData);
-});
+        // Return the dearest once we have all the prices
+        data.max(function(pre, curr) {
+                return pre.price > curr.price;
+            }).forEach(function(minIceData) {
+                console.log('dearest', minIceData);
+        });
+    });
 </pre>
 </div>
 
