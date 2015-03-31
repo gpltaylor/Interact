@@ -2,12 +2,13 @@
 
 // Declare app level module which depends on views, and components
 angular.module('RxApp', [
-  'ngRoute',
-  'RxApp.Home',
-  'RxApp.Menu',
-  'RxApp.RxJS',
-  'RxApp.JavaScript'
+    'ngRoute',
+    'RxApp.Home',
+    'RxApp.Menu',
+    'RxApp.RxJS',
+    'RxApp.JavaScript',
+    'RxApp.Moment'
 ]).
-config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.otherwise({ redirectTo: '/NotFound' });
-}]);
+    config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.otherwise({redirectTo: '/NotFound'});
+    }]);

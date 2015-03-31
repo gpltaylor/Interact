@@ -1,0 +1,25 @@
+<h1>Format</h1>
+<p>
+    A common requirement is to format a date to produce a given pattern. For example showing the day 'Friday' for a given date.
+</p>
+
+<div id="editorwrapper" class="col-xs-6">
+<pre id="editor">
+var formatedDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+console.log('formatedDate', formatedDate);
+</pre>
+</div>
+
+<div class="col-xs-6">
+    <fieldset>
+        <legend>Results</legend>
+        <div ng-repeat="data in scriptResults track by $index">{{data}}</div>
+    </fieldset>
+</div>
+
+<div class="col-xs-12">
+    <input type="button" ng-click="runScript()" value="run" class="btn btn-default" />
+    <input type="button" ng-click="clearResults()" value="clear" class="btn btn-default" />
+
+</div>

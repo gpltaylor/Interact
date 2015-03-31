@@ -48,6 +48,13 @@ angular.module('RxApp')
             description: 'Using functions to repeat the same logic/code over and over without copying and pasting. Reusing code is the corner stone to any programming language.',
             location: '/JavaScript/functions/reuse',
             status: statusType.live
+        }, {
+            catId: 4,
+            typeId: 1,
+            name: 'format',
+            description: 'Formatting Dates using Moment is simple and easy to perform. Using a JavaScript Date type we can format to any requirement you may have.',
+            location: '/Moment/format',
+            status: statusType.live
         }];
 
         return {
@@ -76,7 +83,14 @@ angular.module('RxApp')
             name: 'Beginners JavaScript',
             description: 'A quick look at JavaScript. Shows how to create variables, Objects, Functions and then explains Scope. If you\'re wanting to get started with JavaScript this course is the best place to start.',
             version: '4'
-        }];
+        }, {
+            catId: 4,
+            status: statusType.live,
+            name: 'Moment',
+            description: 'Moment.JS is a library designed to assit using dates within JavaScript.',
+            version: '2.9.0'
+        }
+        ];
 
         return {
             categories: podCategories

@@ -1,12 +1,7 @@
 TODO
 
-Get Karma working to fire up a server to render the HTML
+Use require to load the libs only if they user navigates to a given module.
+For example
+When a user navigates to the RxJS Modules page require should then load the .js files requires to allow this to run.
 
-Get Karma to run test
-http://kwilson.me.uk/blog/use-karma-and-grunt-to-run-your-jasmine-tests-in-real-time/
-
-Get Grunt to Run the tests
-
-Possibly Move code to a src DIR
-
-Get SASS working. Possibly need a dist folder to publish to? This is a pain as I want to edit the files live. Will need a watch to swap the file to dist folder if edited.
+At the moment there are only a few libs however this can take some time to load. There is no point in pre-loading all the scripts.
