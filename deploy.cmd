@@ -111,6 +111,14 @@ call :ExecuteCmd !NPM_CMD! install --development
 call :ExecuteCmd "%NODE_EXE%" node_modules\grunt-cli\bin\grunt
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
+
+:: 5. Start Server
+echo Starting server
+pushd %DEPLOYMENT_TARGET%
+call :ExecuteCmd !NPM_CMD! install --development
+call :ExecuteCmd "%NODE_EXE%" node_modules\grunt-cli\bin\grunt http-server:production
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :: Post deployment stub

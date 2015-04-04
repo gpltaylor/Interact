@@ -36,7 +36,15 @@ module.exports = function(grunt) {
                 host: 'localhost',
                 showDir: true,
                 runInBackground: true
-            }
+            },
+			'production': {
+                cache: 0,
+                root: './',
+                port: 8080,
+                host: 'localhost',
+                showDir: true,
+                runInBackground: true
+			}
         }
     });
 
