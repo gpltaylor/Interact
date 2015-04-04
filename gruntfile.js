@@ -53,6 +53,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default',['karma','http-server:dev','sass','watch']);
+    grunt.registerTask('default',['karma']);
     grunt.registerTask('serve',['http-server:dev','sass','watch']);
 }
