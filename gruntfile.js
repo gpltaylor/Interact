@@ -4,10 +4,14 @@ module.exports = function(grunt) {
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
-				background: true,
-				singleRun: false
+				singleRun: true
             }
         },
+		phantom: {
+			options: {
+				port: 4444
+			}
+		},		
         sass: {
             dist: {
                 files: {
@@ -55,11 +59,13 @@ module.exports = function(grunt) {
     grunt.event.on('watch', logger);
     grunt.event.on('http-server', logger);
     grunt.event.on('sass', logger);
+	grunt.event.on('default', logger);
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-phantom');
 
     grunt.registerTask('default',['karma']);
     grunt.registerTask('serve',['http-server:dev','sass','watch']);

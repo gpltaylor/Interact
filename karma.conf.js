@@ -18,21 +18,26 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['PhantomJS'],
 
     plugins : [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+			'karma-phantomjs-launcher'
             ],
 
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     },
-
-      logLevel: 'INFO'
+	
+	logLevel: 'INFO',
+	colors: true,
+	port: 9876,
+	singleRun: false,
+	captureTimeout: 60000
 
   });
 };
