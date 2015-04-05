@@ -17,7 +17,7 @@ describe('MenuCtrl', function () {
 
         it('should contain Categories', function () {
             expect(scope).toBeDefined();
-            expect(scope.cats.length).toBe(2);
+            expect(scope.cats.length).toBe(3);
         });
 
     });
@@ -33,7 +33,7 @@ describe('MenuCtrl', function () {
 
         it('should have first pod selected', function () {
             expect(scope).toBeDefined();
-            expect(scope.cats.length).toBe(2);
+            expect(scope.cats.length).toBe(3);
 
             var firstPod = scope.cats[0].pods[0];
 
