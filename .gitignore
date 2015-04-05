@@ -7,4 +7,3 @@ tmp
 .idea
 npm-debug.log
 .sass-cache
-app/css/*
