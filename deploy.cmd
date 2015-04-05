@@ -105,10 +105,10 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-:: 4. Build & Test
+:: 4. Build SASS and Minify
 pushd %DEPLOYMENT_TARGET%
 call :ExecuteCmd !NPM_CMD! install --development
-call :ExecuteCmd "%NODE_EXE%" node_modules\grunt-cli\bin\grunt karma
+call :ExecuteCmd "%NODE_EXE%" node_modules\grunt-cli\bin\grunt sass
 IF !ERRORLEVEL! NEQ 0 goto error
 popd
 
