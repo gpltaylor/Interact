@@ -9,7 +9,7 @@ module.exports = function(config){
         'node_modules/angular-mocks/angular-mocks.js',
         'node_modules/rx/dist/rx.all.min.js',
         'app/app.js',
-        'app/Service/*.js',
+        'app/Services/*.js',
         'app/**/*.js',
         'app/**/**/*_test.js'
     ],
@@ -18,7 +18,7 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['PhantomJS'],
 
     plugins : [
             'karma-chrome-launcher',
