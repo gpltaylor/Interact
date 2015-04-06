@@ -13,13 +13,15 @@
 </p>
 <p>
     Using 'When' we are able to perform multiple calls, then when we are happy with the data, use min to get the lowest price.
-    Note that that call takes three seconds to complete.
-    That's because we have to wait for Johns Ice Creams to finish before we sum the details.
-    This does not take five second (sum of all the time each call takes) as they are done in concurrently.
+    Note that that call will take four seconds to complete.
+    That's because we have to wait for Bills Ice Creams to finish before we sum the details.
+    An interesting point is that this code only takes 5 seconds to complete,
+    however usable data is return almost instantly. This keeps visitors/users engaged.
 </p>
 
 <div id="editorwrapper" class="col-xs-6">
 <pre id="editor">
+//Simulate a time delay that you might get when calling and Web Service
 var getPriceFrom = function(arg, price, time) {
     return Rx.Observable.timer(time).thenDo(function() {
         return {name: arg, price: price};
@@ -30,32 +32,33 @@ var getPriceFrom = function(arg, price, time) {
 var data = Rx.Observable.when(
     getPriceFrom('Johns Ice Creams', 3.99, 1000),
     getPriceFrom('Fredricks ice Cream', 2.99, 2000),
-    getPriceFrom('Bills Ice Cream', 12.99, 3000)
+    getPriceFrom('Bills Ice Cream', 12.99, 4000),
+    getPriceFrom('Joe ice Cream', 1.99, 800),
+    getPriceFrom('Kates ice Cream', 5.99, 2000)
 );
 
-// Select all the items as they arrive
-data.subscribe(
-    function(iceData) {
-        console.log(iceData);
-    },
-    function(err) {
-        console.log("error", err);
-    },
-    function(complete) {
-        // Return the cheapest once we have all the prices
-        data.min(function(pre, curr) {
-                return pre.price < curr.price;
-            }).forEach(function(minIceData) {
-                console.log('cheapest', minIceData);
-        });
+// This allows you to customise how you wish to compare objects.
+// Here we are comparing based on the price of the Ice Cream.
+var IceCreamCompare = function(curr, pre){
+  if(curr.price < pre.price) { return -1; }
+  else
+  if(curr.price > pre.price) { return 1; }
 
-        // Return the dearest once we have all the prices
-        data.max(function(pre, curr) {
-                return pre.price > curr.price;
-            }).forEach(function(minIceData) {
-                console.log('dearest', minIceData);
-        });
-    });
+  return 0;
+};
+
+// Select all the items as they arrive
+data.forEach(function(data) {
+   console.log("ForEach:", data);
+});
+
+data.min(IceCreamCompare).forEach(function(data) {
+    console.log("min forEach", data);
+});
+
+data.max(IceCreamCompare).forEach(function(data) {
+    console.log("max forEach", data);
+});
 </pre>
 </div>
 
