@@ -43,14 +43,16 @@ angular.module('RxApp')
             name: 'Using Variables',
             description: 'Explains what a variable is, how to create one.',
             location: '/JavaScript/variables',
-            status: statusType.live
+            status: statusType.live,
+            customHelp: true
         }, {
             catId: 3,
             typeId: 1,
             name: 'Function Reuse',
             description: 'Using functions to repeat the same logic/code over and over without copying and pasting. Reusing code is the corner stone to any programming language.',
             location: '/JavaScript/functions/reuse',
-            status: statusType.live
+            status: statusType.live,
+            customHelp: true
         }, {
             catId: 4,
             typeId: 1,
