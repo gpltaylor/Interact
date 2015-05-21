@@ -12,12 +12,13 @@ angular.module('RxApp')
             name: 'Map',
             description: 'A little info about the Map function',
             location: '/RxJS/map',
-            status: statusType.live
+            status: statusType.live,
+            customHelp: true
         }, {
             catId: 1,
             typeId: 1,
             name: 'Select',
-            description: 'info about select',
+            description: 'Loop over the array of items and perform a calculation/transformation on the data within. The following example shows how to loop over an array and pow(2) the number.',
             location: '/RxJS/select',
             status: statusType.live
         }, {
@@ -26,14 +27,16 @@ angular.module('RxApp')
             name: 'GroupBy',
             description: 'info about group by',
             location: '/RxJS/groupby',
-            status: statusType.live
+            status: statusType.live,
+            customHelp: true
         }, {
             catId: 1,
             typeId: 1,
             name: 'When',
             description: 'Group together a number of async calls to process a the same time. Can also chain calls to make sure they are performed in a given order without dealing with promises.',
             location: '/RxJS/when',
-            status: statusType.live
+            status: statusType.live,
+            customHelp: true
         }, {
             catId: 3,
             typeId: 1,
@@ -54,6 +57,14 @@ angular.module('RxApp')
             name: 'format',
             description: 'Formatting Dates using Moment is simple and easy to perform. Using a JavaScript Date type we can format to any requirement you may have.',
             location: '/Moment/format',
+            status: statusType.live
+        }, {
+            catId: 1,
+            typeId: 1,
+            name: 'Partition',
+            description: 'Producing a set of data from a single array based on a given condition.',
+            location: '/RxJS/partition',
+            customHelp: true,
             status: statusType.live
         }];
 

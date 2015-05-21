@@ -26,6 +26,7 @@ angular.module('RxApp.Menu', ['ngRoute'])
 
         var data = CategoryService.categories
             .filter(function (cat) {
+                // Check we are live
                 return cat.status == StatusType.live;
             })
             .map(function (cat) {

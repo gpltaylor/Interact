@@ -1,40 +1,5 @@
 ﻿<h1>Map</h1>
-<p>Projects each element of an observable sequence into a new form by incorporating the element's index. This is an alias for the select method.</p>
-
-<div id="editorwrapper" class="col-xs-6">
-<pre id="editor">
-// Load Angular Factory that contains pod data used within our menu
-// This can demo how we filter our menu.
-var injector = angular.element(document.body).injector();
-var PodService = injector.get('PodService');
-var CatService = injector.get('CategoryService');
-
-// Map the data together in a usable way
-var data = CatService.categories.map(function(cat) {
-    return { 
-        catId: cat.catId,
-        name: cat.name,
-        description: cat.description,
-        pods: PodService.pods.filter(function(pod) { return pod.catId === cat.catId; })
-        .map(function(pod){ return pod;})
-    };
-});
-
-data.forEach(function(pod) {
-    console.log(pod);
-});
-</pre>
-</div>
-
-<div class="col-xs-6">
-    <fieldset>
-        <legend>Results</legend>
-        <div ng-repeat="data in scriptResults track by $index">{{data}}</div>
-    </fieldset>
-</div>
-
-<div class="col-xs-12">
-    <input type="button" ng-click="runScript()" value="run" class="btn btn-default" />
-    <input type="button" ng-click="clearResults()" value="clear" class="btn btn-default" />
-
-</div>
+<p>
+    Projects each element of an observable sequence into a new form by incorporating the element's index.
+    This is an alias for the select method.
+</p>

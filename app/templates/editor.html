@@ -1,0 +1,14 @@
+<span ng-show="pod.customHelp != true">
+<h1>{{pod.name}}</h1>
+<div ng-bind="pod.description" />
+</span>
+
+<div ng-show="pod.customHelp == true" ng-include="'app' + pod.location + '.html'" />
+
+<div id="editorwrapper" class="col-xs-6">
+<pre id="editor">
+
+</pre>
+</div>
+
+<div ng-include="'app/templates/editornav.html'"/>
