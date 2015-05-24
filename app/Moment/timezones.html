@@ -1,0 +1,35 @@
+<div>
+    <h1>Time Zones</h1>
+    <p>
+        A very common mistake made by developers is saving dates without the time zone or not converting the date to UTC before saving.
+        The issues are compounded in countries like the UK where they have GMT+1 for daily light saving time (BST). This is where the time moves
+        back and forwards by an hour to maximise the available sun light, also places where the time is shifted by 30 minutes...
+    </p>
+    <p>
+        In New York John submits an application for a loan. He asks to be called at 9am tomorrow. he is called at 10:30pm by a call centre
+        in India. Did they get the time wrong? No, they simply called him at 9am IST (time in India).
+    </p>
+    <p>
+        We need to make sure that we translated the date but how? If we have call centres all over the world we would have to save the
+        time in multiple columns for each location?
+    </p>
+    <p>
+        We can choose to save the date in a single time zone. For example if we save the date in UTC then we can translate this to the
+        correct time. Our example above would select the New York time 9am and therefore save 2pm in the database. We would need to add
+        5 hours 30 minutes to convert this to the time in india.
+    </p>
+    <p>
+        It's therefore the job for the application in question to convert the UTC to the local time. If this happens John would get a
+        call at 9am irregardless of the call centres location in the world and has it happens your browser support local time out of
+        the box!
+    </p>
+</div>
+
+<form class="form-horizontal col-xs-12">
+    <div class="form-group col-xs-6">
+        <label class="col-xs-3" for="dtpselected">Select a date</label>
+        <div class="col-xs-9">
+            <input type="datetime-local" id="dtpselected" class="form-control" />
+        </div>
+    </div>
+</form>

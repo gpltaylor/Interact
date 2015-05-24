@@ -68,6 +68,14 @@ angular.module('RxApp')
             location: '/RxJS/partition',
             customHelp: true,
             status: statusType.live
+        },  {
+            catId: 4,
+            typeId: 1,
+            name: 'Time Zone',
+            description: 'Working with Time Zones can be confusing at first. Here we show you how moment can make your live easier.',
+            location: '/Moment/timezones',
+            customHelp: true,
+            status: statusType.live
         }];
 
         return {
