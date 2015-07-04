@@ -12,5 +12,8 @@ angular.module('RxApp.JavaScript', ['ngRoute'])
     }).when('/JavaScript/functions/reuse', {
         templateUrl: 'app/templates/editor.html',
         controller: 'editorCtrl'
+    }).when('/JavaScript/:pod', {
+        templateUrl: 'app/templates/editor.html',
+        controller: 'editorCtrl'
     });
 }]);

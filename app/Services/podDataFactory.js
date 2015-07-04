@@ -76,6 +76,14 @@ angular.module('RxApp')
             location: '/Moment/timezones',
             customHelp: true,
             status: statusType.live
+        }, {
+            catId: 3,
+            typeId: 1,
+            name: 'Promise',
+            description: 'Changing the order of code execution in an asynchronous world can be tricky. Promises help make this job a little more manageable.',
+            location: '/JavaScript/promise',
+            customHelp: true,
+            status: statusType.live
         }];
 
         return {
