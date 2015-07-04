@@ -1,0 +1,45 @@
+﻿<h1>Contribute</h1>
+<p>
+    The goal of this site is to allows other developers to contribute to this project making it better!
+</p>
+<p>
+    The easiest way to get started is to clone our Git Repos and add a new Pod. Once you have done the work request a Pull.
+I will review the work and merge into the site! It's really that easy.
+
+    <ul>
+    <li><a href="https://github.com/gpltaylor/Interact">https://github.com/gpltaylor/Interact</a></li>
+    </ul>
+</p>
+
+<h2>How it works</h2>
+<p>
+    To make a new Pod you need to add two new files and update the list of Pods within the Services Pod Factory.
+</p>
+<div class="howtosteps">
+<p>
+    If you wish to make a Pod about the use of Filter. This would sit in the JavaScript Category.
+</p>
+<p>
+    Add a new file in the /app/javaScript/ folder called filter.html and place the content tutorial.
+</p>
+<p>
+    Add a new file in the /app/JavaScript/ folder called filter.js and place the JavaScript code demonstrating the use of the filter function.
+    Make note to use the "console.log" method to show the output of the function to the user.
+</p>
+<p>
+    Next updpate the Pod Factory to include the new Pod. This means updating the array of items within podDataFactory.js.<br/>
+    This can be obvious but it's vital to make sure you have selected the correct Category ID and Type Id. You should also make the status
+    live so this will display within the Menu on the home page
+    <pre>
+{
+    catId: 3, // The Category the Pod will sit under in the main menu
+    typeId: 1, // The Type Id of the Pod
+    name: 'Promise', // A name for the Pod
+    description: 'Changing the order...', // A good description of the Pod to show within the main menu
+    location: '/JavaScript/promise', // The location to the Pod
+    customHelp: true, // If the Pod has a custom HTML page with the full tutorial (it's advice to do this)
+    status: statusType.live // If the Pod should be visible on the Menu
+}
+</pre>
+</p>
+</div>
