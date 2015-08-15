@@ -4,6 +4,16 @@
 body {
   color: #215B3F; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  border-bottom: solid 1px #215B3F;
+  z-index: 1000;
+  display: table;
+  box-sizing: border-box;
+  width: 100%; }
+
 .interactv1 h1, .interactv1 h2, .interactv1 h3, .interactv1 h4, .interactv1 h5 {
   color: #3CA372; }
 .interactv1 #editorwrapper {
@@ -15,11 +25,25 @@ body {
   right: 0;
   bottom: 0;
   left: 0; }
+.interactv1 .reactmenu header {
+  margin-bottom: 10px;
+  padding: 20px; }
+.interactv1 .reactmenu .menusection:nth-child(even) {
+  background-color: #3CA372; }
+  .interactv1 .reactmenu .menusection:nth-child(even) h1, .interactv1 .reactmenu .menusection:nth-child(even) h2, .interactv1 .reactmenu .menusection:nth-child(even) h3, .interactv1 .reactmenu .menusection:nth-child(even) h4 {
+    color: #215B3F; }
+  .interactv1 .reactmenu .menusection:nth-child(even) .pod {
+    color: #215B3F; }
+.interactv1 .reactmenu .menusection:nth-child(odd) {
+  background-color: #215B3F; }
+  .interactv1 .reactmenu .menusection:nth-child(odd) .pod {
+    color: #3CA372; }
 .interactv1 .reactmenu h1 {
   margin: 0px; }
 .interactv1 .reactmenu .pod {
   min-height: 80px;
-  padding-top: 5px;
+  padding: 10px;
+  margin-right: 10px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;

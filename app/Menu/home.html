@@ -1,14 +1,14 @@
 ﻿<div class="reactmenu">
-    <div>
+    <header>
         <h1>{{selected.name}}</h1>
 
         <div>{{selected.description}}</div>
         <div>
             <button ng-click="navTo(selected.location)" class="btn btn-default">Begin</button>
         </div>
-    </div>
+    </header>
 
-    <div ng-repeat="cat in cats" class="row">
+    <div ng-repeat="cat in cats" class="row menusection">
         <div class="col-sm-12 cat">
             <h2>{{cat.name}}</h2>
 

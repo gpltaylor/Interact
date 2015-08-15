@@ -105,7 +105,20 @@ angular.module('RxApp.Menu', ['ngRoute'])
                     centerMode: false
                 });
                 $scope.menuLoading = false;
+
+                // TODO: Look to see if there are events in Angualar to run only one the DOM has loaded the module
+                // Make the Header for the menu static
+                var $window = $(window),
+                    $stickyHeader = $('.interactv1 .reactmenu header'),
+                    elTop = $stickyHeader.offset().top;
+                $window.scroll(function() {
+                    $stickyHeader.toggleClass('sticky', $window.scrollTop() > elTop);
+                });
+
             },500);
+
+
+
         };
 
     }]);
