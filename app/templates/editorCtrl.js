@@ -26,8 +26,10 @@ angular.module('RxApp.RxJS')
             });
         };
 
-        console.log = function () {
-            $scope.scriptResults.push(arguments);
+        console.log = function (data) {
+            $scope.$apply(function () {
+                $scope.scriptResults.push(data);
+            });
         };
 
         $scope.runScript = function () {
@@ -35,7 +37,7 @@ angular.module('RxApp.RxJS')
             try {
                 eval(editor.getValue());
             } catch (ex) {
-                console.log(ex.message, ex.stack);
+                console.log(ex);
             }
         };
 

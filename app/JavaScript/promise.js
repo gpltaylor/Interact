@@ -12,7 +12,7 @@ var p1 = new Promise(
     });
 
 p1.then(function (data) {
-    console.log("Done", data);
+    console.log(data);
     $scope.$apply();
 }).catch(function () {
     console.log('promise was rejected');

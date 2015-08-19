@@ -54,7 +54,7 @@ angular.module('RxApp.Menu', ['ngRoute'])
             },
             // Error
             function(err) {
-                console.log("err3042", err);
+                console.log(err);
             },
             // Complete
             function() {

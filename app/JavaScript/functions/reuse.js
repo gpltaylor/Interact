@@ -14,6 +14,6 @@ function iMath() {
 var gas = 20;
 var electric = 35;
 
-console.log('add', add(gas, electric));
-console.log('adder', adder(gas, electric));
-console.log('Math', iMath()(gas, electric));
+console.log(add(gas, electric));
+console.log(adder(gas, electric));
+console.log(iMath()(gas, electric));

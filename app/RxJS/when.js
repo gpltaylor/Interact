@@ -26,13 +26,16 @@ var IceCreamCompare = function(curr, pre){
 
 // Select all the items as they arrive
 data.forEach(function(data) {
-   console.log("ForEach:", data);
+    console.log("forEach");
+    console.log(data);
 });
 
 data.min(IceCreamCompare).forEach(function(data) {
-    console.log("min forEach", data);
+    console.log("min");
+    console.log(data);
 });
 
 data.max(IceCreamCompare).forEach(function(data) {
-    console.log("max forEach", data);
+    console.log("max");
+    console.log(data);
 });
