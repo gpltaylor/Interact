@@ -1,0 +1,13 @@
+﻿<h1>Interval</h1>
+<p>
+    Interval allows you to implement conditional loops. Based on other factors where you can chain other RxJS methods together.
+    For example, Interval will loop forever, however because we have chained the "take" method we are forcing this to stop once it
+    have taken (take) 5 attempts.
+</p>
+<p>
+    Note that we also chain the method "timeInterval" that allows us to record the amount of time between intervals.
+    The example below show the number of times the event was called and also the time taken in between calls. Due to the way that
+    JavaScript works this won't always be 500 ms.<br/>
+    You should note that the results from the map is whats returned to the forEach method but only because that's the last step
+    in the chaining of RxJS methods. This hopefully shows the power of this amazing library.
+</p>

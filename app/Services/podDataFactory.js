@@ -38,6 +38,14 @@ angular.module('RxApp')
             status: statusType.live,
             customHelp: true
         }, {
+            catId: 1,
+            typeId: 1,
+            name: 'Interval',
+            description: 'Allows you to conditionally run tasks on a given interval. Also allowing you to Chain other RxJS methods together to provide some powerful solutions.',
+            location: '/RxJS/interval',
+            customHelp: true,
+            status: statusType.live
+        }, {
             catId: 3,
             typeId: 1,
             name: 'Using Variables',
