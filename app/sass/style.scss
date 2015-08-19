@@ -1,10 +1,6 @@
 @import 'mixins';
 @import 'settings';
 
-* {
-  font-family: $mainFont;
-}
-
 body {
   color: $fontcolor;
 }
@@ -37,9 +33,14 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+
   }
 
   .reactmenu {
+
+    header, div, h1, h2 {
+      font-family: $mainFont;
+    }
 
     header {
       margin-bottom: 10px;
