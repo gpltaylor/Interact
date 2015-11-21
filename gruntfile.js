@@ -11,14 +11,17 @@ module.exports = function(grunt) {
 			options: {
 				port: 4444
 			}
-		},		
-        sass: {
-            dist: {
-                files: {
-                    'app/css/style.css' : 'app/sass/style.scss'
-                }
-            }
-        },
+		},
+		sass: {
+			options: {
+				sourceMap: true
+			},
+			dist: {
+				files: {
+					'app/css/style.css': 'app/sass/style.scss'
+				}
+			}
+		},
         watch: {
             options: {
                 livereload: true
@@ -61,7 +64,8 @@ module.exports = function(grunt) {
     grunt.event.on('sass', logger);
 	grunt.event.on('default', logger);
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+	
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-karma');
@@ -69,4 +73,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default',['karma']);
     grunt.registerTask('serve',['http-server:dev','sass','watch']);
+	grunt.registerTask('css', ['sass']);
 }
