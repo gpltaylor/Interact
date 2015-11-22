@@ -36,11 +36,15 @@ body {
   background-color: #3CA372; }
   .interactv1 .reactmenu .menusection:nth-child(even) h1, .interactv1 .reactmenu .menusection:nth-child(even) h2, .interactv1 .reactmenu .menusection:nth-child(even) h3, .interactv1 .reactmenu .menusection:nth-child(even) h4 {
     color: #215B3F; }
+  .interactv1 .reactmenu .menusection:nth-child(even) p {
+    color: #215B3F; }
   .interactv1 .reactmenu .menusection:nth-child(even) .pod {
     color: #215B3F; }
 
 .interactv1 .reactmenu .menusection:nth-child(odd) {
   background-color: #215B3F; }
+  .interactv1 .reactmenu .menusection:nth-child(odd) p {
+    color: #3CA372; }
   .interactv1 .reactmenu .menusection:nth-child(odd) .pod {
     color: #3CA372; }
 

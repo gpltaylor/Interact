@@ -92,6 +92,14 @@ angular.module('RxApp')
             location: '/JavaScript/promise',
             customHelp: true,
             status: statusType.live
+        }, {
+            catId: 3,
+            typeId: 1,
+            name: 'Arrow Functions',
+            description: 'EcmaScript 15 (JS6) includes arrowed functions. Simply put, they\'re an easier way to create functions.',
+            location: '/JavaScript/arrow',
+            customHelp: true,
+            status: statusType.live
         }];
 
         return {

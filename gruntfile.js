@@ -32,8 +32,14 @@ module.exports = function(grunt) {
             },
 			karma: {
 				files: ['app/**/**/*.js'],
-				tasks: ['karma:unit:run'] //NOTE the :run flag
-			  }			
+                tasks: ['karma:unit:run'] //NOTE the :run flag
+            },
+            html: {
+                files: ['app/**/*.html', 'app/**/**/*.html'],
+                options: {
+                    livereload: true
+                }
+            }		
         },
         'http-server': {
             'dev': {

@@ -55,6 +55,10 @@ body {
           color: $bgmenu2;
         }
 
+        p {
+            color: $bgmenu2;
+        }
+
         .pod {
           color: $bgmenu2;
         }
@@ -62,6 +66,10 @@ body {
       }
       &:nth-child(odd) {
         background-color: $bgmenu2;
+
+        p {
+            color: $bgmenu1;
+        }
 
         .pod {
           color: $bgmenu1;
