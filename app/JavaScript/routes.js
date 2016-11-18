@@ -4,7 +4,7 @@ angular.module('RxApp.JavaScript', ['ngRoute'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/JavaScript', {
-        templateUrl: 'App/JavaScript/home.html',
+        templateUrl: 'app/JavaScript/home.html',
         controller: 'editorCtrl'
     }).when('/JavaScript/variables', {
         templateUrl: 'app/templates/editor.html',

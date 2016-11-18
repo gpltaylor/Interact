@@ -4,19 +4,19 @@ angular.module('RxApp.Home', ['ngRoute'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: 'App/Home/home.html',
+        templateUrl: 'app/Home/home.html',
         controller: 'MenuCtrl'
     }).when('/AboutUs', {
-        templateUrl: 'App/Home/aboutus.html',
+        templateUrl: 'app/Home/aboutus.html',
         controller: 'MenuCtrl'
     }).when('/GettingStarted', {
-        templateUrl: 'App/Home/gettingstarted.html',
+        templateUrl: 'app/Home/gettingstarted.html',
         controller: 'MenuCtrl'
     }).when('/ContactUs', {
-        templateUrl: 'App/Home/contactus.html',
+        templateUrl: 'app/Home/contactus.html',
         controller: 'MenuCtrl'
     }).when('/Contribute', {
-        templateUrl: 'App/Home/contribute.html',
+        templateUrl: 'app/Home/contribute.html',
         controller: 'MenuCtrl'
     });
 }]);

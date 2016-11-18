@@ -4,10 +4,10 @@ angular.module('RxApp.Menu', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/menu', {
-            templateUrl: 'App/Menu/home.html',
+            templateUrl: 'app/Menu/home.html',
             controller: 'MenuCtrl'
         }).when('/menu/base', {
-            templateUrl: 'App/Menu/home.html',
+            templateUrl: 'app/Menu/home.html',
             controller: 'MenuCtrl'
         });
     }])
