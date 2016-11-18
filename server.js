@@ -4,7 +4,7 @@ var serveStatic = require('serve-static')
 var port = process.env.port || 1337;
 
 // Serve up public/ftp folder
-var serve = serveStatic('.', {'index': ['index.html', 'index.htm']})
+var serve = serveStatic(__dirname, {'index': ['index.html', 'index.htm']})
 
 // Create server
 var server = http.createServer(function(req, res){
