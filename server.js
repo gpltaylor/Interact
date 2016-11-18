@@ -1,16 +1,23 @@
-var finalhandler = require('finalhandler')
-var http = require('http')
-var serveStatic = require('serve-static')
-var port = process.env.port || 1337;
+var express = require('express');
+var app = express();
 
-// Serve up public/ftp folder
-var serve = serveStatic('.', {'index': ['index.html', 'index.htm']})
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
 
-// Create server
-var server = http.createServer(function(req, res){
-  var done = finalhandler(req, res)
-  serve(req, res, done)
-})
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
-// Listen
-server.listen(port);
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/'));
+
+// set the home page route
+app.get('/', function(req, res) {
+
+	// ejs render automatically looks in the views folder
+	res.render('index');
+});
+
+app.listen(port, function() {
+	console.log('Our app is running on http://localhost:' + port);
+});
